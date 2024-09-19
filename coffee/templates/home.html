@@ -1,0 +1,21 @@
+{%extends  'base.html '%}
+
+{% block content%}
+    <h1 style="text-align: center; margin-top: 20px;">Feel Good Coffee</h1>
+
+    <div class="row mx-5 my-4">
+     <!-- for displaying coffee from the database -->
+        {% for coffee in coffee %}   
+            <div class="col">
+                <div class="card mt-4" style="width: 18rem;">
+                    <img src={{coffee.image}} class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{coffee.name}}</h5>
+                    <p class="card-text">Shs.{{ coffee.price }}</p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor%}
+    </div>      
+{% endblock%}
